@@ -1,0 +1,477 @@
+[gd_scene format=3 uid="uid://dr878524qxx1e"]
+
+[ext_resource type="Script" uid="uid://cdtuqsredqy04" path="res://gdscripts/card_preview.gd" id="1_np6ql"]
+[ext_resource type="Script" uid="uid://c5js16ov0m876" path="res://gdscripts/card_preview_texture.gd" id="2_euy8h"]
+[ext_resource type="Texture2D" uid="uid://d20a3hb6cw4mo" path="res://assets/themes/default/textures/card_covers/cover.jpg" id="2_np6ql"]
+[ext_resource type="Texture2D" uid="uid://bppq5xr7y4qwe" path="res://assets/themes/default/textures/counters/SpellCounter-DULI.png" id="3_lkt51"]
+[ext_resource type="Texture2D" uid="uid://bh6mqwe2nqilr" path="res://assets/themes/default/textures/level_rank_pendulum_links/pendulum_scale.png" id="4_cq13t"]
+[ext_resource type="Texture2D" uid="uid://b8banptt1wwkh" path="res://assets/themes/default/textures/level_rank_pendulum_links/tl.png" id="5_aulvq"]
+[ext_resource type="Texture2D" uid="uid://xxagjy7nmaac" path="res://assets/themes/default/textures/level_rank_pendulum_links/level.png" id="5_v5vrs"]
+[ext_resource type="Texture2D" uid="uid://c78tu2bqn0ny6" path="res://assets/themes/default/textures/monster_types/machine.png" id="6_5fpxm"]
+[ext_resource type="Texture2D" uid="uid://b7jb17cjrvgxg" path="res://assets/themes/default/textures/level_rank_pendulum_links/t.png" id="6_no2uv"]
+[ext_resource type="Texture2D" uid="uid://donclb8ekqw6" path="res://assets/themes/default/textures/attributes/earth.png" id="7_j7kg5"]
+[ext_resource type="Texture2D" uid="uid://cb07vilublf4f" path="res://assets/themes/default/textures/level_rank_pendulum_links/tr.png" id="7_qu63b"]
+[ext_resource type="Texture2D" uid="uid://dphe3hettpwur" path="res://assets/themes/default/textures/level_rank_pendulum_links/l.png" id="8_np6ql"]
+[ext_resource type="Texture2D" uid="uid://nkj80rx7dw6f" path="res://assets/themes/default/textures/level_rank_pendulum_links/r.png" id="9_1rprm"]
+[ext_resource type="Texture2D" uid="uid://bk6olrwek831p" path="res://assets/themes/default/textures/level_rank_pendulum_links/bl.png" id="10_jdcar"]
+[ext_resource type="Texture2D" uid="uid://7c5ovnwrg2pa" path="res://assets/themes/default/textures/level_rank_pendulum_links/b.png" id="11_flq1r"]
+[ext_resource type="Texture2D" uid="uid://dlww8v5yesyin" path="res://assets/themes/default/textures/level_rank_pendulum_links/br.png" id="12_pki8n"]
+[ext_resource type="Texture2D" uid="uid://8bqsw61vhmrr" path="res://assets/themes/default/textures/spell_trap_types/continuous.png" id="16_qu63b"]
+[ext_resource type="Texture2D" uid="uid://dk3ii1ryq8n4i" path="res://assets/themes/default/textures/attributes/trap.png" id="17_np6ql"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5pvlh"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55672175, 0.39781213, 0.14628664, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aulvq"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0.94103616, 0.65811145, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2yv33"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(0.18685228, 0.2806113, 0.62167245, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(6.160736e-05, 0.5809086, 0.98447484, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_no2uv"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.99915236, 0.75968844, 1.1551381e-06, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qu63b"]
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.99915236, 0.75968844, 1.1551381e-06, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_np6ql"]
+content_margin_top = 5.0
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1rprm"]
+bg_color = Color(0.2, 0.2, 0.2, 0.6784314)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_duavg"]
+bg_color = Color(0.12225222, 0.12225225, 0.12225217, 1)
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="CardPreview" type="PanelContainer" unique_id=289175443]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -993.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_np6ql")
+
+[node name="PreviewContainer" type="VBoxContainer" parent="." unique_id=1422009662]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PreviewContainer" unique_id=1150956855]
+layout_mode = 2
+
+[node name="CardPreviewTexture" type="TextureRect" parent="PreviewContainer/HBoxContainer" unique_id=1558705969]
+texture_filter = 4
+custom_minimum_size = Vector2(120, 175)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_np6ql")
+expand_mode = 1
+script = ExtResource("2_euy8h")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PreviewContainer/HBoxContainer" unique_id=1327328910]
+layout_mode = 2
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="CardProperiesBadgesBar" type="VBoxContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer" unique_id=996379499]
+custom_minimum_size = Vector2(35, 116)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="CountersPreview" type="PanelContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar" unique_id=126204465]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5pvlh")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/CountersPreview" unique_id=856898356]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Count" type="Label" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/CountersPreview/VBoxContainer" unique_id=1817865985]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CounterTexture" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/CountersPreview/VBoxContainer" unique_id=1965927201]
+texture_filter = 4
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_lkt51")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PendulumScalePreview" type="PanelContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar" unique_id=2134727575]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_aulvq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/PendulumScalePreview" unique_id=406826264]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Count" type="Label" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/PendulumScalePreview/VBoxContainer" unique_id=56832131]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PendulumScaleTexture" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/PendulumScalePreview/VBoxContainer" unique_id=1756412089]
+texture_filter = 4
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_cq13t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="LinksPreview" type="PanelContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar" unique_id=1501225340]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2yv33")
+
+[node name="GridContainer" type="GridContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview" unique_id=230552394]
+layout_mode = 2
+theme_override_constants/h_separation = -4
+theme_override_constants/v_separation = -8
+columns = 3
+
+[node name="tl" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=172672230]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("5_aulvq")
+expand_mode = 1
+
+[node name="t" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=616875385]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("6_no2uv")
+expand_mode = 1
+
+[node name="tr" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=163431560]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("7_qu63b")
+expand_mode = 1
+
+[node name="l" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=1780432465]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("8_np6ql")
+expand_mode = 1
+
+[node name="Count" type="Label" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=1206591883]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="r" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=57943405]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("9_1rprm")
+expand_mode = 1
+
+[node name="bl" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=2011253585]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("10_jdcar")
+expand_mode = 1
+
+[node name="b" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=550791500]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("11_flq1r")
+expand_mode = 1
+
+[node name="br" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LinksPreview/GridContainer" unique_id=1769464559]
+texture_filter = 4
+custom_minimum_size = Vector2(13, 13)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("12_pki8n")
+expand_mode = 1
+
+[node name="LevelRankPreview" type="PanelContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar" unique_id=445402350]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_no2uv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LevelRankPreview" unique_id=655816785]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Count" type="Label" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LevelRankPreview/VBoxContainer" unique_id=1161867004]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LevelRankTexture" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/LevelRankPreview/VBoxContainer" unique_id=745753277]
+texture_filter = 4
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("5_v5vrs")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MonsterTypePreview" type="PanelContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar" unique_id=594433644]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qu63b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/MonsterTypePreview" unique_id=1838040650]
+layout_mode = 2
+alignment = 1
+
+[node name="MonsterRace" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/MonsterTypePreview/VBoxContainer" unique_id=1962840794]
+texture_filter = 4
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("6_5fpxm")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MonsterAttribute" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/MonsterTypePreview/VBoxContainer" unique_id=653630890]
+texture_filter = 4
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7_j7kg5")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpellTrapTypePreview" type="PanelContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar" unique_id=1657472070]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qu63b")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/SpellTrapTypePreview" unique_id=983878028]
+layout_mode = 2
+alignment = 1
+
+[node name="SpellTrapType" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/SpellTrapTypePreview/VBoxContainer" unique_id=383807018]
+texture_filter = 4
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("16_qu63b")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SpellTrapAttribute" type="TextureRect" parent="PreviewContainer/HBoxContainer/ScrollContainer/CardProperiesBadgesBar/SpellTrapTypePreview/VBoxContainer" unique_id=978097934]
+texture_filter = 4
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("17_np6ql")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CardInfo" type="VBoxContainer" parent="PreviewContainer" unique_id=413398117]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HeaderPanel" type="PanelContainer" parent="PreviewContainer/CardInfo" unique_id=1365177516]
+self_modulate = Color(0.09017786, 0.101385094, 0.08849903, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_np6ql")
+
+[node name="CardProperties" type="VBoxContainer" parent="PreviewContainer/CardInfo/HeaderPanel" unique_id=1761066531]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="CardName" type="RichTextLabel" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties" unique_id=553589419]
+custom_minimum_size = Vector2(69, 25)
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.05882353, 0.05882353, 0.05882353, 0.5803922)
+bbcode_enabled = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonsterAtkDef" type="PanelContainer" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties" unique_id=1660621001]
+visible = false
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1rprm")
+
+[node name="HFlowContainer" type="HFlowContainer" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties/MonsterAtkDef" unique_id=280658800]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = -5
+alignment = 1
+
+[node name="Atk" type="HBoxContainer" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties/MonsterAtkDef/HFlowContainer" unique_id=989529344]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties/MonsterAtkDef/HFlowContainer/Atk" unique_id=1964057475]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "ATK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Count" type="Label" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties/MonsterAtkDef/HFlowContainer/Atk" unique_id=1143702571]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "2500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Def" type="HBoxContainer" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties/MonsterAtkDef/HFlowContainer" unique_id=294719600]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties/MonsterAtkDef/HFlowContainer/Def" unique_id=1858615251]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Def"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Count" type="Label" parent="PreviewContainer/CardInfo/HeaderPanel/CardProperties/MonsterAtkDef/HFlowContainer/Def" unique_id=356645798]
+layout_mode = 2
+theme_override_font_sizes/font_size = 22
+text = "2500"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardDescription" type="Panel" parent="PreviewContainer/CardInfo" unique_id=1662756610]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_duavg")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="PreviewContainer/CardInfo/CardDescription" unique_id=1370423167]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.0
+offset_top = 9.0
+offset_right = -11.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PreviewContainer/CardInfo/CardDescription/ScrollContainer" unique_id=621950410]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 18
+bbcode_enabled = true

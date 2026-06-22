@@ -1,0 +1,1598 @@
+[gd_scene format=3 uid="uid://x0xpie1sxo4b"]
+
+[ext_resource type="Script" uid="uid://gs65b14vbdrw" path="res://gdscripts/search/SearchBox.gd" id="1_gfqy3"]
+[ext_resource type="Texture2D" uid="uid://dxkt7nhrt6qid" path="res://assets/themes/default/textures/attributes/water.png" id="1_mcabh"]
+[ext_resource type="Texture2D" uid="uid://coa462uyclcd6" path="res://assets/themes/default/textures/attributes/fire.png" id="2_7a52v"]
+[ext_resource type="Script" uid="uid://bdasehpbr0w7u" path="res://gdscripts/search/TriStateButton.gd" id="2_g6scd"]
+[ext_resource type="Texture2D" uid="uid://dddvpjw3u4tp5" path="res://assets/themes/default/textures/attributes/dark.png" id="3_mf7rl"]
+[ext_resource type="Texture2D" uid="uid://eorr0kukekrv" path="res://assets/themes/default/textures/attributes/wind.png" id="4_its87"]
+[ext_resource type="Texture2D" uid="uid://donclb8ekqw6" path="res://assets/themes/default/textures/attributes/earth.png" id="5_u2ghi"]
+[ext_resource type="Texture2D" uid="uid://dtlm7707pwm6j" path="res://assets/themes/default/textures/attributes/light.png" id="6_kqfuq"]
+[ext_resource type="Texture2D" uid="uid://cml18sgpu4e3k" path="res://assets/themes/default/textures/attributes/divine.png" id="7_fsrrg"]
+[ext_resource type="Texture2D" uid="uid://bleiuhlo4cos5" path="res://assets/themes/default/textures/level_rank_pendulum_links/tl_active.png" id="8_8o05w"]
+[ext_resource type="Texture2D" uid="uid://c4cl60oncylav" path="res://assets/themes/default/textures/monster_card_type/normal.png" id="8_44ln0"]
+[ext_resource type="Texture2D" uid="uid://cv7adfsh25yy0" path="res://assets/themes/default/textures/level_rank_pendulum_links/t_active.png" id="9_868y4"]
+[ext_resource type="Texture2D" uid="uid://1dp4xihio24k" path="res://assets/themes/default/textures/monster_card_type/ritual.png" id="9_xplvd"]
+[ext_resource type="Texture2D" uid="uid://b1ag4mexbdb25" path="res://assets/themes/default/textures/monster_card_type/fusion.png" id="10_xw8fp"]
+[ext_resource type="Texture2D" uid="uid://dvexhrrkae4og" path="res://assets/themes/default/textures/level_rank_pendulum_links/tr_active.png" id="10_yfhu4"]
+[ext_resource type="Texture2D" uid="uid://c5ps8mbigojx0" path="res://assets/themes/default/textures/monster_card_type/synchro.png" id="11_1adwf"]
+[ext_resource type="Texture2D" uid="uid://bh7fmocqay1cr" path="res://assets/themes/default/textures/level_rank_pendulum_links/l_active.png" id="11_1ehra"]
+[ext_resource type="Texture2D" uid="uid://vumfn1x1s6wd" path="res://assets/themes/default/textures/monster_card_type/xyz.png" id="12_4afsi"]
+[ext_resource type="Texture2D" uid="uid://c5s1n788sdin8" path="res://assets/themes/default/textures/level_rank_pendulum_links/r_active.png" id="12_p3ibv"]
+[ext_resource type="Texture2D" uid="uid://bthschej6ryco" path="res://assets/themes/default/textures/level_rank_pendulum_links/bl_active.png" id="13_fqal5"]
+[ext_resource type="Texture2D" uid="uid://bs6yimgd8sau7" path="res://assets/themes/default/textures/monster_card_type/link.png" id="13_gvy36"]
+[ext_resource type="Texture2D" uid="uid://cf2wite6c62op" path="res://assets/themes/default/textures/monster_card_type/effect.png" id="14_004ua"]
+[ext_resource type="Texture2D" uid="uid://d1mpsy8t0pdt5" path="res://assets/themes/default/textures/level_rank_pendulum_links/b_active.png" id="14_tm0p3"]
+[ext_resource type="Texture2D" uid="uid://bmb08illg15lm" path="res://assets/themes/default/textures/level_rank_pendulum_links/br_active.png" id="15_lt5xw"]
+[ext_resource type="Texture2D" uid="uid://bjsdahwatm5yo" path="res://assets/themes/default/textures/monster_card_type/effect_p.png" id="15_sr0q0"]
+[ext_resource type="Texture2D" uid="uid://u8oohbl7nb1f" path="res://assets/themes/default/textures/monster_card_type/token.png" id="16_jjoe1"]
+[ext_resource type="Texture2D" uid="uid://ynu3slpnr5ks" path="res://assets/themes/default/textures/game_icons/sp.png" id="17_7e28l"]
+[ext_resource type="Texture2D" uid="uid://bn3deycfcgtdx" path="res://assets/themes/default/textures/monster_card_subtype/spirit.png" id="18_k8tp5"]
+[ext_resource type="Texture2D" uid="uid://mwmqikvsu15h" path="res://assets/themes/default/textures/monster_card_subtype/toon.png" id="19_hub52"]
+[ext_resource type="Texture2D" uid="uid://c6plyuxvn85db" path="res://assets/themes/default/textures/monster_card_subtype/gemini.png" id="20_s5w0v"]
+[ext_resource type="Texture2D" uid="uid://bksnkja62sms8" path="res://assets/themes/default/textures/monster_card_subtype/flip.png" id="21_671dd"]
+[ext_resource type="Texture2D" uid="uid://da2aix32ipvah" path="res://assets/themes/default/textures/monster_card_subtype/union.png" id="22_vu7yq"]
+[ext_resource type="Texture2D" uid="uid://dpsjbi6ydmjla" path="res://assets/themes/default/textures/monster_card_subtype/tuner.png" id="23_4yorh"]
+[ext_resource type="Texture2D" uid="uid://ullwyi86iif6" path="res://assets/themes/default/textures/monster_types/warrior.png" id="24_eimp2"]
+[ext_resource type="Texture2D" uid="uid://cf1pyntjl82se" path="res://assets/themes/default/textures/monster_types/beast-warrior.png" id="25_bp6oi"]
+[ext_resource type="Texture2D" uid="uid://dkn7sxgpdw6aw" path="res://assets/themes/default/textures/monster_types/aqua.png" id="26_re7eo"]
+[ext_resource type="Texture2D" uid="uid://c6hpdle0jg5gg" path="res://assets/themes/default/textures/monster_types/dinosaur.png" id="27_uwncl"]
+[ext_resource type="Texture2D" uid="uid://7nlajbpd65th" path="res://assets/themes/default/textures/monster_types/beast.png" id="28_3y38i"]
+[ext_resource type="Texture2D" uid="uid://cw6p4ukvdyq0d" path="res://assets/themes/default/textures/monster_types/cyberse.png" id="29_7nppe"]
+[ext_resource type="Texture2D" uid="uid://c4tlr57lw4v0a" path="res://assets/themes/default/textures/monster_types/divine-beast.png" id="30_l2453"]
+[ext_resource type="Texture2D" uid="uid://c0mhdwi8vnrby" path="res://assets/themes/default/textures/monster_types/diviner-beast.png" id="31_5p543"]
+[ext_resource type="Texture2D" uid="uid://dkawfo7qo4idp" path="res://assets/themes/default/textures/monster_types/dragon.png" id="32_mqqpq"]
+[ext_resource type="Texture2D" uid="uid://dvdjeskoc3ria" path="res://assets/themes/default/textures/monster_types/fairy.png" id="33_gfqy3"]
+[ext_resource type="Texture2D" uid="uid://b2j8mqjkblff5" path="res://assets/themes/default/textures/monster_types/fiend.png" id="34_g6scd"]
+[ext_resource type="Texture2D" uid="uid://880swcs8yqy3" path="res://assets/themes/default/textures/monster_types/fish.png" id="35_ufjcu"]
+[ext_resource type="Texture2D" uid="uid://ba51sntkiei6m" path="res://assets/themes/default/textures/monster_types/insect.png" id="36_tb5y1"]
+[ext_resource type="Texture2D" uid="uid://c78tu2bqn0ny6" path="res://assets/themes/default/textures/monster_types/machine.png" id="37_kfvvp"]
+[ext_resource type="Texture2D" uid="uid://d1ht7n8baubge" path="res://assets/themes/default/textures/monster_types/plant.png" id="38_ek1fr"]
+[ext_resource type="Texture2D" uid="uid://b7ogmiufefe2e" path="res://assets/themes/default/textures/monster_types/psychic.png" id="39_4u67f"]
+[ext_resource type="Texture2D" uid="uid://byjxnhhahj8qp" path="res://assets/themes/default/textures/monster_types/pyro.png" id="40_ilxdr"]
+[ext_resource type="Texture2D" uid="uid://7y3w4b33fxth" path="res://assets/themes/default/textures/monster_types/reptile.png" id="41_yyl1e"]
+[ext_resource type="Texture2D" uid="uid://8rb5ybqwuhio" path="res://assets/themes/default/textures/monster_types/rock.png" id="42_jg31d"]
+[ext_resource type="Texture2D" uid="uid://snacumsxeqxl" path="res://assets/themes/default/textures/monster_types/sea-serpent.png" id="43_t7vc8"]
+[ext_resource type="Texture2D" uid="uid://d1lymsq0lqx8g" path="res://assets/themes/default/textures/monster_types/spellcaster.png" id="44_fe2n7"]
+[ext_resource type="Texture2D" uid="uid://bxuinfei6c3fu" path="res://assets/themes/default/textures/monster_types/thunder.png" id="45_4vl12"]
+[ext_resource type="Texture2D" uid="uid://dijucm30ign3q" path="res://assets/themes/default/textures/monster_types/winged-beast.png" id="46_rtpak"]
+[ext_resource type="Texture2D" uid="uid://mbuadtmu1ykx" path="res://assets/themes/default/textures/monster_types/wyrm.png" id="47_jy5kh"]
+[ext_resource type="Texture2D" uid="uid://cve03ghyf5y1i" path="res://assets/themes/default/textures/monster_types/zombie.png" id="48_g4fa3"]
+[ext_resource type="Texture2D" uid="uid://dpsngoq487hyl" path="res://assets/themes/default/textures/monster_types/illusion.png" id="49_tjyv2"]
+[ext_resource type="Texture2D" uid="uid://dvdm4vs81l2i6" path="res://assets/themes/default/textures/monster_types/galaxy.png" id="52_4u67f"]
+[ext_resource type="Texture2D" uid="uid://6l3a3knfkk7x" path="res://assets/themes/default/textures/monster_types/high-dragon.png" id="53_ilxdr"]
+[ext_resource type="Texture2D" uid="uid://ca5k73srxpfyb" path="res://assets/themes/default/textures/monster_types/celestial-warrior.png" id="54_yyl1e"]
+[ext_resource type="Texture2D" uid="uid://qb7rkk8rs1y3" path="res://assets/themes/default/textures/monster_types/cyborg.png" id="55_jg31d"]
+[ext_resource type="Texture2D" uid="uid://dc81yo1ely8o8" path="res://assets/themes/default/textures/monster_types/magical-knight.png" id="56_t7vc8"]
+[ext_resource type="Texture2D" uid="uid://btanjvatb7cg4" path="res://assets/themes/default/textures/monster_types/omega-psychic.png" id="57_ilxdr"]
+[ext_resource type="Texture2D" uid="uid://bpcseq30fm7t8" path="res://assets/themes/default/textures/monster_card_type/spell.png" id="58_mqqpq"]
+[ext_resource type="Texture2D" uid="uid://lkvgnvpw6a3l" path="res://assets/themes/default/textures/spell_trap_types/equip.png" id="59_gfqy3"]
+[ext_resource type="Texture2D" uid="uid://baxrjn4lfmcg4" path="res://assets/themes/default/textures/spell_trap_types/quick-play.png" id="60_g6scd"]
+[ext_resource type="Texture2D" uid="uid://cd6wgmgunk851" path="res://assets/themes/default/textures/spell_trap_types/field.png" id="61_ufjcu"]
+[ext_resource type="Texture2D" uid="uid://8bqsw61vhmrr" path="res://assets/themes/default/textures/spell_trap_types/continuous.png" id="62_tb5y1"]
+[ext_resource type="Texture2D" uid="uid://qqbk3h5f1xob" path="res://assets/themes/default/textures/spell_trap_types/ritual.png" id="63_kfvvp"]
+[ext_resource type="Texture2D" uid="uid://dta62g4qqydwp" path="res://assets/themes/default/textures/monster_card_type/trap.png" id="64_ek1fr"]
+[ext_resource type="Texture2D" uid="uid://ds4vokgr8rrml" path="res://assets/themes/default/textures/spell_trap_types/counter.png" id="65_4u67f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g6scd"]
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ilxdr"]
+bg_color = Color(0.7182418, 0.3826966, 0.049589194, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yyl1e"]
+bg_color = Color(0.7182418, 0.3826966, 0.049589194, 1)
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_ilxdr"]
+allow_unpress = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jg31d"]
+bg_color = Color(2.1658838e-07, 0.4902867, 0.21351501, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t7vc8"]
+bg_color = Color(2.1658838e-07, 0.4902867, 0.21351501, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fe2n7"]
+bg_color = Color(0.59098935, 0.14114133, 0.21861282, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vl12"]
+bg_color = Color(0.59098935, 0.14114133, 0.21861282, 1)
+
+[node name="SearchBox" type="PanelContainer" unique_id=1275505793]
+offset_right = 1144.0
+offset_bottom = 904.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_gfqy3")
+
+[node name="FoldableContainer" type="FoldableContainer" parent="." unique_id=910195381]
+layout_mode = 2
+folded = true
+title = "Search"
+title_alignment = 1
+title_text_overrun_behavior = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer" unique_id=440576844]
+visible = false
+layout_mode = 2
+
+[node name="TextSearch" type="HBoxContainer" parent="FoldableContainer/VBoxContainer" unique_id=37326693]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="FoldableContainer/VBoxContainer/TextSearch" unique_id=922420547]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Name" type="Button" parent="FoldableContainer/VBoxContainer/TextSearch" unique_id=665837872]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "Name"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="Description" type="Button" parent="FoldableContainer/VBoxContainer/TextSearch" unique_id=332931158]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "Description"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="FoldableContainer" type="FoldableContainer" parent="FoldableContainer/VBoxContainer" unique_id=919376648]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 0
+folded = true
+title_alignment = 1
+title_text_overrun_behavior = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer" unique_id=127458847]
+visible = false
+layout_mode = 2
+
+[node name="BanSelect" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=1702725642]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Banned" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/BanSelect" unique_id=356862261]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "Banned"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="Limited" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/BanSelect" unique_id=938919201]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "Limited"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="SemiLimited" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/BanSelect" unique_id=2037614214]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "Semi-Limited"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="OtSelect" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=1187822593]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Ocg" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/OtSelect" unique_id=1358342616]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "OCG"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="Tcg" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/OtSelect" unique_id=1139645882]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "TCG"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="AnimeManga" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/OtSelect" unique_id=108029665]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "ANIME/MANGA"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="Rush" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/OtSelect" unique_id=776157054]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "RUSH"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="RushLegend" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/OtSelect" unique_id=726861182]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "RUSH_LEGEND"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="MainCardTypeSelectTabs" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=124151585]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MonsterCheckBox" type="CheckBox" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/MainCardTypeSelectTabs" unique_id=821429070]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ilxdr")
+
+[node name="Monster" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/MainCardTypeSelectTabs" unique_id=1770283936]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_yyl1e")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ilxdr")
+text = "Monster"
+
+[node name="SpellCheckBox" type="CheckBox" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/MainCardTypeSelectTabs" unique_id=893670634]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_jg31d")
+
+[node name="Spell" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/MainCardTypeSelectTabs" unique_id=1067304801]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_t7vc8")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ilxdr")
+text = "Spell"
+
+[node name="TrapCheckBox" type="CheckBox" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/MainCardTypeSelectTabs" unique_id=1118195623]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_fe2n7")
+
+[node name="Trap" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/MainCardTypeSelectTabs" unique_id=843120508]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_4vl12")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_ilxdr")
+text = "Trap"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer" unique_id=278208238]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MonsterSearch" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer" unique_id=464494825]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch" unique_id=949145943]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="AttributeSelect" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=428579231]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect" unique_id=328759298]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Water" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect/HFlowContainer" unique_id=1797250533]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("1_mcabh")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Fire" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect/HFlowContainer" unique_id=1185226505]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("2_7a52v")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Dark" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect/HFlowContainer" unique_id=629239094]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("3_mf7rl")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Wind" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect/HFlowContainer" unique_id=938631293]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("4_its87")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Earth" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect/HFlowContainer" unique_id=533520562]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("5_u2ghi")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Light" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect/HFlowContainer" unique_id=1947776248]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("6_kqfuq")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Divine" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AttributeSelect/HFlowContainer" unique_id=1464926951]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("7_fsrrg")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="TypeSelect" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=864432116]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect" unique_id=1301932834]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Regular" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect/HFlowContainer" unique_id=146800697]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("14_004ua")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Ritual" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect/HFlowContainer" unique_id=1943747891]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("9_xplvd")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Fusion" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect/HFlowContainer" unique_id=602530260]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("10_xw8fp")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Synchro" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect/HFlowContainer" unique_id=497793178]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("11_1adwf")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Xyz" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect/HFlowContainer" unique_id=88777836]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("12_4afsi")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Link" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect/HFlowContainer" unique_id=547936208]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("13_gvy36")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Token" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/TypeSelect/HFlowContainer" unique_id=2016631289]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("16_jjoe1")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="SubTypeSelect" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=42406664]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect" unique_id=623037550]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="InOneCard" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=446605123]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "in one card"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="Multiple" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=1890969292]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+text = "Multiple"
+text_overrun_behavior = 5
+script = ExtResource("2_g6scd")
+
+[node name="Normal" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=2117350182]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("8_44ln0")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Effect" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=2083406064]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("14_004ua")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Pendulum" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=2105727113]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("15_sr0q0")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="SpecialSummon" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=347085040]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("17_7e28l")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Spirit" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=606037540]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("18_k8tp5")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Toon" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=1277937138]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("19_hub52")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Gemini" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=1340914250]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("20_s5w0v")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Flip" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=1158428228]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("21_671dd")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Union" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=1556883042]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("22_vu7yq")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Tuner" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/SubTypeSelect/HFlowContainer" unique_id=1866433757]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("23_4yorh")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="RaceTypeSelect" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=1235469480]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect" unique_id=465586439]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Warrior" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=37275966]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("24_eimp2")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="BeastWarrior" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1049613790]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("25_bp6oi")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Aqua" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1909452657]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("26_re7eo")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Dinosaur" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1086460370]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("27_uwncl")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Beast" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1972549035]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("28_3y38i")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Cyberse" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=495685373]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("29_7nppe")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="DivineBeast" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=711893644]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("30_l2453")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="DivinerBeast" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=663741362]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("31_5p543")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Dragon" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=806930357]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("32_mqqpq")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Fairy" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=216506452]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("33_gfqy3")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Fiend" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1623449423]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("34_g6scd")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Fish" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=611616748]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("35_ufjcu")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Insect" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=769462731]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("36_tb5y1")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Machine" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1321916047]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("37_kfvvp")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Plant" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1103235590]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("38_ek1fr")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Psychic" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1651600021]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("39_4u67f")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Pyro" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=2011731585]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("40_ilxdr")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Reptile" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1839697705]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("41_yyl1e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Rock" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1691586916]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("42_jg31d")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="SeaSerpent" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=140832679]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("43_t7vc8")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Spellcaster" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1618618057]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("44_fe2n7")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Thunder" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=551819897]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("45_4vl12")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="WingedBeast" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=14910156]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("46_rtpak")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Wyrm" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=893287207]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("47_jy5kh")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Zombie" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1328948945]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("48_g4fa3")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Illusion" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1890693687]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("49_tjyv2")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Galaxy" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1086022529]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("52_4u67f")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="HighDragon" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=250138694]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("53_ilxdr")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="CelestialWarrior" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=194825468]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("54_yyl1e")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Cyborg" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1301030858]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("55_jg31d")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="MagicalKnight" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=1543972342]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("56_t7vc8")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="OmegaPsychic" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/RaceTypeSelect/HFlowContainer" unique_id=974628512]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("57_ilxdr")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="LinkSelect" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=1294021247]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HFlowContainer" type="HFlowContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect" unique_id=1374694698]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="IncludLinks" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer" unique_id=1113412090]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks" unique_id=58121341]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = -4
+columns = 3
+
+[node name="tl" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=1174219836]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("8_8o05w")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="t" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=828525656]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("9_868y4")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="tr" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=467089421]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("10_yfhu4")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="l" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=36123741]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("11_1ehra")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Count" type="Label" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=1557557226]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="r" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=811838957]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("12_p3ibv")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="bl" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=18409686]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("13_fqal5")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="b" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=1902932885]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("14_tm0p3")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="br" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/IncludLinks/GridContainer" unique_id=1777842212]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+toggle_mode = true
+icon = ExtResource("15_lt5xw")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="ExcludLinks" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer" unique_id=423093563]
+visible = false
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks" unique_id=1075047183]
+custom_minimum_size = Vector2(130, 0)
+layout_mode = 2
+theme_override_constants/h_separation = 3
+theme_override_constants/v_separation = -4
+columns = 3
+
+[node name="tl" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=142606131]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("8_8o05w")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="t" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=1476787454]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("9_868y4")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="tr" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=157088482]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("10_yfhu4")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="l" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=300455897]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("11_1ehra")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Count" type="Label" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=1736264390]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="r" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=907452268]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("12_p3ibv")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="bl" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=1865641104]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("13_fqal5")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="b" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=2030148971]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("14_tm0p3")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="br" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LinkSelect/HFlowContainer/ExcludLinks/GridContainer" unique_id=393554972]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("15_lt5xw")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="LevelRankLinkValue" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=1584857843]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LevelRankLinkValue" unique_id=1504057773]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LevelRankLinkValue/HBoxContainer" unique_id=1272499046]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lvel/Rank/Link"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="OptionButton" type="OptionButton" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LevelRankLinkValue/HBoxContainer" unique_id=2081797269]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+text_overrun_behavior = 5
+selected = 0
+item_count = 8
+popup/item_0/text = "Equal"
+popup/item_0/id = 0
+popup/item_1/text = "Not Equal"
+popup/item_1/id = 1
+popup/item_2/text = "Greater"
+popup/item_2/id = 2
+popup/item_3/text = "Greater Or Equal"
+popup/item_3/id = 3
+popup/item_4/text = "Less"
+popup/item_4/id = 4
+popup/item_5/text = "Less Or Equal"
+popup/item_5/id = 5
+popup/item_6/text = "Range"
+popup/item_6/id = 6
+popup/item_7/text = "Any"
+popup/item_7/id = 7
+
+[node name="LineEdit" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LevelRankLinkValue/HBoxContainer" unique_id=171061803]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="LineEdit2" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/LevelRankLinkValue/HBoxContainer" unique_id=1778026596]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="PendulumScaleValue" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=386541699]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/PendulumScaleValue" unique_id=1607041609]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/PendulumScaleValue/HBoxContainer" unique_id=412656857]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Scale"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="OptionButton" type="OptionButton" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/PendulumScaleValue/HBoxContainer" unique_id=2137401253]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+text_overrun_behavior = 5
+selected = 0
+item_count = 8
+popup/item_0/text = "Equal"
+popup/item_0/id = 0
+popup/item_1/text = "Not Equal"
+popup/item_1/id = 1
+popup/item_2/text = "Greater"
+popup/item_2/id = 2
+popup/item_3/text = "Greater Or Equal"
+popup/item_3/id = 3
+popup/item_4/text = "Less"
+popup/item_4/id = 4
+popup/item_5/text = "Less Or Equal"
+popup/item_5/id = 5
+popup/item_6/text = "Range"
+popup/item_6/id = 6
+popup/item_7/text = "Any"
+popup/item_7/id = 7
+
+[node name="LineEdit" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/PendulumScaleValue/HBoxContainer" unique_id=1279178298]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="LineEdit2" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/PendulumScaleValue/HBoxContainer" unique_id=1988746824]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="AtkValue" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=126592361]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AtkValue" unique_id=1820950517]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AtkValue/HBoxContainer" unique_id=2064911054]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Atk"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="OptionButton" type="OptionButton" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AtkValue/HBoxContainer" unique_id=1804322885]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+text_overrun_behavior = 5
+selected = 0
+item_count = 9
+popup/item_0/text = "Equal"
+popup/item_0/id = 0
+popup/item_1/text = "Not Equal"
+popup/item_1/id = 1
+popup/item_2/text = "Greater"
+popup/item_2/id = 2
+popup/item_3/text = "Greater Or Equal"
+popup/item_3/id = 3
+popup/item_4/text = "Less"
+popup/item_4/id = 4
+popup/item_5/text = "Less Or Equal"
+popup/item_5/id = 5
+popup/item_6/text = "Range"
+popup/item_6/id = 6
+popup/item_7/text = "Any"
+popup/item_7/id = 7
+popup/item_8/text = "?"
+popup/item_8/id = 8
+
+[node name="LineEdit" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AtkValue/HBoxContainer" unique_id=831424260]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="LineEdit2" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/AtkValue/HBoxContainer" unique_id=1434775633]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="DefValue" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer" unique_id=902801878]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/DefValue" unique_id=928376354]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/DefValue/HBoxContainer" unique_id=66555900]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Def"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 5
+
+[node name="OptionButton" type="OptionButton" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/DefValue/HBoxContainer" unique_id=814542370]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+text_overrun_behavior = 5
+selected = 0
+item_count = 9
+popup/item_0/text = "Equal"
+popup/item_0/id = 0
+popup/item_1/text = "Not Equal"
+popup/item_1/id = 1
+popup/item_2/text = "Greater"
+popup/item_2/id = 2
+popup/item_3/text = "Greater Or Equal"
+popup/item_3/id = 3
+popup/item_4/text = "Less"
+popup/item_4/id = 4
+popup/item_5/text = "Less Or Equal"
+popup/item_5/id = 5
+popup/item_6/text = "Range"
+popup/item_6/id = 6
+popup/item_7/text = "Any"
+popup/item_7/id = 7
+popup/item_8/text = "?"
+popup/item_8/id = 8
+
+[node name="LineEdit" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/DefValue/HBoxContainer" unique_id=553651678]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="LineEdit2" type="LineEdit" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/MonsterSearch/VBoxContainer/DefValue/HBoxContainer" unique_id=1782782482]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+virtual_keyboard_type = 2
+caret_blink = true
+
+[node name="SpellSearch" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer" unique_id=982821733]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TypeSelect" type="HFlowContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/SpellSearch" unique_id=1585763350]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Normal" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/SpellSearch/TypeSelect" unique_id=686669947]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("58_mqqpq")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Equip" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/SpellSearch/TypeSelect" unique_id=791492298]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("59_gfqy3")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="QuickPlay" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/SpellSearch/TypeSelect" unique_id=1679476397]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("60_g6scd")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Field" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/SpellSearch/TypeSelect" unique_id=1773306492]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("61_ufjcu")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Continuous" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/SpellSearch/TypeSelect" unique_id=1390115605]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("62_tb5y1")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Ritual" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/SpellSearch/TypeSelect" unique_id=1503793574]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("63_kfvvp")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="TrapSearch" type="PanelContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer" unique_id=801072456]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TypeSelect" type="HFlowContainer" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/TrapSearch" unique_id=726863751]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="Normal" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/TrapSearch/TypeSelect" unique_id=395461171]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("64_ek1fr")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Counter" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/TrapSearch/TypeSelect" unique_id=1811406970]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("65_4u67f")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="Continuous" type="Button" parent="FoldableContainer/VBoxContainer/FoldableContainer/VBoxContainer/ScrollContainer/TrapSearch/TypeSelect" unique_id=917603308]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_styles/normal = SubResource("StyleBoxFlat_g6scd")
+toggle_mode = true
+icon = ExtResource("62_tb5y1")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("2_g6scd")
+
+[node name="SearchToggle" type="Button" parent="FoldableContainer/VBoxContainer" unique_id=504745703]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+toggle_mode = true
+text = "Search"

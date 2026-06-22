@@ -1,0 +1,1997 @@
+[gd_scene format=3 uid="uid://dh7ojdu5p0vb5"]
+
+[ext_resource type="Theme" uid="uid://bonspx7stmdwy" path="res://assets/themes/default/new_theme.tres" id="1_k4hqi"]
+[ext_resource type="PackedScene" uid="uid://dr878524qxx1e" path="res://scenes/reusable_components/card_preview.tscn" id="1_vorho"]
+[ext_resource type="PackedScene" uid="uid://de6p8vio2tuwd" path="res://scenes/reusable_components/deck_card.tscn" id="3_6eayh"]
+[ext_resource type="PackedScene" uid="uid://c8djftd5iclyn" path="res://scenes/reusable_components/Deck.tscn" id="3_lsn1v"]
+[ext_resource type="Texture2D" uid="uid://bhmavootl5gqy" path="res://assets/themes/default/textures/icons/delete-outline.png" id="3_sddag"]
+[ext_resource type="Texture2D" uid="uid://dqh5h0l2m4q5r" path="res://assets/themes/default/textures/icons/checkbox-marked.png" id="4_u4pf3"]
+[ext_resource type="Texture2D" uid="uid://hvm2bybus77k" path="res://assets/themes/default/textures/icons/clipboard-check-multiple.png" id="5_sl115"]
+[ext_resource type="Texture2D" uid="uid://pbbs6ag0555c" path="res://assets/themes/default/textures/icons/pencil-box.png" id="6_07ic1"]
+[ext_resource type="Texture2D" uid="uid://co14qexry60qy" path="res://assets/themes/default/textures/icons/table.png" id="7_2wl6q"]
+[ext_resource type="Texture2D" uid="uid://dbfeuit5sc3a8" path="res://assets/themes/default/textures/icons/table-row.png" id="8_vwifi"]
+[ext_resource type="Texture2D" uid="uid://05fl3co07q2q" path="res://assets/themes/default/textures/icons/table-row-plus-after.png" id="9_7tqc3"]
+[ext_resource type="Script" uid="uid://byjpv2gxegtu1" path="res://gdscripts/deck_grid_test.gd" id="10_dt2cr"]
+[ext_resource type="Texture2D" uid="uid://cf2wite6c62op" path="res://assets/themes/default/textures/monster_card_type/effect.png" id="11_m71n4"]
+[ext_resource type="Texture2D" uid="uid://bjsdahwatm5yo" path="res://assets/themes/default/textures/monster_card_type/effect_p.png" id="12_dt2cr"]
+[ext_resource type="Texture2D" uid="uid://c4cl60oncylav" path="res://assets/themes/default/textures/monster_card_type/normal.png" id="13_k4hqi"]
+[ext_resource type="Texture2D" uid="uid://gpfbi3bi3ccy" path="res://assets/themes/default/textures/icons/table-row-height.png" id="13_l466j"]
+[ext_resource type="Texture2D" uid="uid://cw3rki8mg24aw" path="res://assets/themes/default/textures/icons/table-pivot.png" id="14_5a0pp"]
+[ext_resource type="Texture2D" uid="uid://mb61gn7oeym3" path="res://assets/themes/default/textures/monster_card_type/normal_p.png" id="14_l466j"]
+[ext_resource type="Texture2D" uid="uid://1dp4xihio24k" path="res://assets/themes/default/textures/monster_card_type/ritual.png" id="15_2pjqa"]
+[ext_resource type="Texture2D" uid="uid://b1yd4gar0dfwo" path="res://assets/themes/default/textures/monster_card_type/ritual_p.png" id="16_5a0pp"]
+[ext_resource type="Texture2D" uid="uid://b1ag4mexbdb25" path="res://assets/themes/default/textures/monster_card_type/fusion.png" id="17_lsn1v"]
+[ext_resource type="Texture2D" uid="uid://d13qxotyru5gi" path="res://assets/themes/default/textures/monster_card_type/fusion_p.png" id="18_mi13x"]
+[ext_resource type="Texture2D" uid="uid://c5ps8mbigojx0" path="res://assets/themes/default/textures/monster_card_type/synchro.png" id="19_eq7ta"]
+[ext_resource type="Texture2D" uid="uid://ckvpg2fvtyxr3" path="res://assets/themes/default/textures/monster_card_type/synchro_p.png" id="20_37tbp"]
+[ext_resource type="Texture2D" uid="uid://vumfn1x1s6wd" path="res://assets/themes/default/textures/monster_card_type/xyz.png" id="21_odatr"]
+[ext_resource type="Texture2D" uid="uid://dm2qxpjjldp7x" path="res://assets/themes/default/textures/monster_card_type/xyz_p.png" id="22_5vugj"]
+[ext_resource type="Texture2D" uid="uid://bs6yimgd8sau7" path="res://assets/themes/default/textures/monster_card_type/link.png" id="23_wvi04"]
+[ext_resource type="Texture2D" uid="uid://bpcseq30fm7t8" path="res://assets/themes/default/textures/monster_card_type/spell.png" id="24_xly64"]
+[ext_resource type="Texture2D" uid="uid://dta62g4qqydwp" path="res://assets/themes/default/textures/monster_card_type/trap.png" id="25_xxuwc"]
+[ext_resource type="PackedScene" uid="uid://x0xpie1sxo4b" path="res://scenes/reusable_components/search_box.tscn" id="29_2pjqa"]
+[ext_resource type="Script" uid="uid://cmc4jqvyxp82o" path="res://gdscripts/VisualGrid.gd" id="32_mi13x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xrkgp"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6eayh"]
+bg_color = Color(0.88209057, 0.48042762, 0.107322104, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i7o55"]
+bg_color = Color(0.50245106, 0.1365692, 0.53940195, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpsye"]
+bg_color = Color(0.35540316, 0.68252546, 0.45677167, 1)
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn8v1"]
+bg_color = Color(0.11243192, 0.112431966, 0.11243186, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a76bk"]
+corner_radius_top_left = 20
+corner_radius_bottom_left = 20
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vorho"]
+corner_radius_top_left = 12
+corner_radius_bottom_left = 12
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m71n4"]
+bg_color = Color(0.7967493, 0.3528154, 0.11228547, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dt2cr"]
+bg_color = Color(0.7967493, 0.3528154, 0.11228547, 1)
+border_width_left = 7
+border_color = Color(8.904189e-07, 0.51745486, 0.36331952, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k4hqi"]
+bg_color = Color(0.7921569, 0.54509807, 0.14117648, 1)
+border_color = Color(8.904189e-07, 0.51745486, 0.36331952, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l466j"]
+bg_color = Color(0.7921569, 0.54509807, 0.14117648, 1)
+border_width_left = 7
+border_color = Color(8.904189e-07, 0.51745486, 0.36331952, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pjqa"]
+bg_color = Color(0.20619902, 0.39858258, 0.6179762, 1)
+border_color = Color(8.904189e-07, 0.51745486, 0.36331952, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5a0pp"]
+bg_color = Color(0.20619902, 0.39858258, 0.6179762, 1)
+border_width_left = 5
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lsn1v"]
+bg_color = Color(0.40897915, 0.26141614, 0.47039616, 1)
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mi13x"]
+bg_color = Color(0.40784314, 0.2627451, 0.47058824, 1)
+border_width_left = 5
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq7ta"]
+bg_color = Color(0.86245626, 0.7737182, 0.9039456, 1)
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_37tbp"]
+bg_color = Color(0.86245626, 0.7737182, 0.9039456, 1)
+border_width_left = 7
+border_color = Color(8.904189e-07, 0.51745486, 0.36331952, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_odatr"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vugj"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 5
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wvi04"]
+bg_color = Color(0.1418817, 0.2587721, 0.5708491, 1)
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xly64"]
+bg_color = Color(8.904189e-07, 0.51745486, 0.36331952, 1)
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xxuwc"]
+bg_color = Color(0.49404436, 0.15189812, 0.37087753, 1)
+border_color = Color(0, 0.93960965, 0.6739717, 1)
+border_blend = true
+
+[node name="Control" type="Control" unique_id=2123962187]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_k4hqi")
+theme_type_variation = &"Default"
+
+[node name="HSplitContainer" type="HSplitContainer" parent="." unique_id=227551659]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 6
+theme_override_constants/minimum_grab_thickness = 6
+theme_override_constants/autohide = 1
+drag_area_highlight_in_editor = true
+
+[node name="CardPreview" parent="HSplitContainer" unique_id=289175443 instance=ExtResource("1_vorho")]
+layout_mode = 2
+
+[node name="EditorWorkspace" type="PanelContainer" parent="HSplitContainer" unique_id=63387873]
+custom_minimum_size = Vector2(950, 0)
+layout_mode = 2
+
+[node name="HSplitContainer" type="HSplitContainer" parent="HSplitContainer/EditorWorkspace" unique_id=2118424651]
+layout_mode = 2
+split_offsets = PackedInt32Array(438)
+split_offset = 438
+
+[node name="Deck" parent="HSplitContainer/EditorWorkspace/HSplitContainer" unique_id=873269707 instance=ExtResource("3_lsn1v")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer" unique_id=188171213]
+visible = false
+layout_mode = 2
+
+[node name="Deck" type="VBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer" unique_id=4250649]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck" unique_id=1126514982]
+custom_minimum_size = Vector2(0, 44)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrkgp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header" unique_id=1959584098]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SelectDecks" type="MenuButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer" unique_id=1375254931]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "decks"
+item_count = 2
+popup/item_0/text = "d1"
+popup/item_0/id = 0
+popup/item_1/text = "d2"
+popup/item_1/id = 1
+
+[node name="DeckTools" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer" unique_id=1871726828]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckTools" unique_id=1710204772]
+custom_minimum_size = Vector2(23, 0)
+layout_mode = 2
+text = "+"
+
+[node name="Button2" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckTools" unique_id=1396817711]
+custom_minimum_size = Vector2(23, 0)
+layout_mode = 2
+icon = ExtResource("3_sddag")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button3" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckTools" unique_id=1992974543]
+custom_minimum_size = Vector2(23, 0)
+layout_mode = 2
+icon = ExtResource("4_u4pf3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button4" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckTools" unique_id=606802745]
+custom_minimum_size = Vector2(23, 0)
+layout_mode = 2
+icon = ExtResource("5_sl115")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button5" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckTools" unique_id=730610853]
+custom_minimum_size = Vector2(23, 0)
+layout_mode = 2
+icon = ExtResource("6_07ic1")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DeckPanelsTabs" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer" unique_id=2074430838]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="MainTab" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckPanelsTabs" unique_id=1179919463]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_6eayh")
+icon = ExtResource("7_2wl6q")
+icon_alignment = 1
+expand_icon = true
+
+[node name="ExtraTab" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckPanelsTabs" unique_id=1499770306]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_i7o55")
+icon = ExtResource("8_vwifi")
+icon_alignment = 1
+expand_icon = true
+
+[node name="SideTab" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Header/HBoxContainer/DeckPanelsTabs" unique_id=1016039933]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_jpsye")
+icon = ExtResource("9_7tqc3")
+icon_alignment = 1
+expand_icon = true
+
+[node name="DeckPanelsContainer" type="VBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck" unique_id=948573695]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MainDeckCardsGrid" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer" unique_id=1612580934]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8v1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid" unique_id=89991]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = -7.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+
+[node name="DeckGridTest" type="HFlowContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer" unique_id=580336493]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = -27
+theme_override_constants/v_separation = 10
+alignment = 1
+last_wrap_alignment = 1
+script = ExtResource("10_dt2cr")
+min_h_separation = 10
+
+[node name="DeckCard" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=739722346 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard2" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=157147216 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard3" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=2037494865 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard4" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=493496890 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard5" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1834645273 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard6" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1971041364 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard7" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1190823434 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard8" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=963228216 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard9" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=78569052 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard10" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1545964530 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard11" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=2013134675 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard12" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=395019033 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard13" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1770610679 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard14" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1981087621 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard15" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1678022917 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard16" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1351148839 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard17" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1394614036 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard18" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1368948478 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard19" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=696831093 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard20" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=2043646864 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard21" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1139668829 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard22" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1722347665 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard23" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=485386818 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard24" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1176717244 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard25" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=323527021 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard26" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1424831713 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard27" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1200003494 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard28" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1279894661 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard29" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1597059151 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard30" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=474750505 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard31" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=629108894 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard32" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=2043678080 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard33" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=542121389 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard34" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=600553902 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard35" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=108511801 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard36" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=649321600 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard37" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1456748056 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard38" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=586478304 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard39" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=824872611 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard40" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=2050906185 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard41" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=647776783 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard42" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1104445712 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard43" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=951224978 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard44" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=725881523 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard45" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1500759346 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard46" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1349082194 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard47" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=828208271 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard48" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=223247908 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard49" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1041417815 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard50" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=157646737 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard51" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1009808287 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard52" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1515183457 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard53" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1065688391 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard54" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1925088754 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard55" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1012170937 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard56" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1897002687 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard57" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1386490605 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard58" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=23062318 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard59" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=517905068 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard60" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1828019635 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard61" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/MainDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=935484170 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="ExtraCardsGrid" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer" unique_id=1838164056]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8v1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid" unique_id=1943238594]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = -7.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+
+[node name="DeckGridTest" type="HFlowContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer" unique_id=120415188]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = -25
+theme_override_constants/v_separation = 10
+alignment = 1
+last_wrap_alignment = 1
+script = ExtResource("10_dt2cr")
+min_h_separation = 10
+
+[node name="DeckCard" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=1816793107 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard2" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=1068173987 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard3" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=1283034106 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard4" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=484126626 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard5" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=2110386495 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard6" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=1452376123 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard7" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=860771552 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard8" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=658309178 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard9" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=349085922 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard10" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=1018124625 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard11" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=780609959 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard12" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=360574483 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard13" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=1419804362 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard14" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=1519777901 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard15" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/ExtraCardsGrid/ScrollContainer/DeckGridTest" unique_id=733504960 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="SideDeckCardsGrid" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer" unique_id=1253546928]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8v1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid" unique_id=1718673501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 12.0
+offset_right = -7.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+
+[node name="DeckGridTest" type="HFlowContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer" unique_id=715100767]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = -25
+theme_override_constants/v_separation = 10
+alignment = 1
+last_wrap_alignment = 1
+script = ExtResource("10_dt2cr")
+min_h_separation = 10
+
+[node name="DeckCard" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=983112981 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard2" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=2025948418 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard3" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1878357018 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard4" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1820014390 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard5" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=696904773 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard6" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=237488179 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard7" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=387004583 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard8" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=2130363496 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard9" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1509168969 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard10" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=170331043 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard11" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1457360341 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard12" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=183008469 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard13" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=203896928 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard14" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1839221264 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard15" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/DeckPanelsContainer/SideDeckCardsGrid/ScrollContainer/DeckGridTest" unique_id=1037027329 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="Status" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck" unique_id=1842693258]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8v1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status" unique_id=1810518814]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer" unique_id=904226002]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer" unique_id=1742703491]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label2" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/HBoxContainer" unique_id=255750641]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a76bk")
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/HBoxContainer" unique_id=1221958310]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a76bk")
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/HBoxContainer" unique_id=726645485]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a76bk")
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton2" type="MenuButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer" unique_id=1406176901]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bans"
+item_count = 2
+popup/item_0/text = "d1"
+popup/item_0/id = 0
+popup/item_1/text = "d2"
+popup/item_1/id = 1
+
+[node name="Sort" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer" unique_id=108489701]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button" type="OptionButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/Sort" unique_id=864735001]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+item_count = 1
+popup/item_0/text = "type"
+popup/item_0/id = 0
+
+[node name="VerticalCheckButtonContainer" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/Sort" unique_id=564875996]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/Sort/VerticalCheckButtonContainer" unique_id=595786013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer" unique_id=458783629]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/HBoxContainer3" unique_id=637033592]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+icon = ExtResource("13_l466j")
+icon_alignment = 1
+expand_icon = true
+
+[node name="Button2" type="Button" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer/HBoxContainer3" unique_id=622260485]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+icon = ExtResource("14_5a0pp")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CheckButton" type="CheckButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/Deck/Status/ScrollContainer/HBoxContainer" unique_id=1246984910]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vorho")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardsTypeCounter" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer" unique_id=757955709]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 1
+
+[node name="CardTypesBadges" type="VBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter" unique_id=576480876]
+layout_mode = 2
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=306317182]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer" unique_id=192812894]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("11_m71n4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer" unique_id=1493361365]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer2" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=917013355]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer2" unique_id=2068192423]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("12_dt2cr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer2" unique_id=1534277081]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer3" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1378555058]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer3" unique_id=1636798716]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("13_k4hqi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer3" unique_id=1896394467]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer4" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1009653175]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer4" unique_id=222534130]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("14_l466j")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer4" unique_id=1484609032]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer14" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1028324479]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer14" unique_id=161227588]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("15_2pjqa")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer14" unique_id=920834887]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer15" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1966379579]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer15" unique_id=1215444725]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("16_5a0pp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer15" unique_id=1452461296]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer5" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=2026045716]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer5" unique_id=716562422]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("17_lsn1v")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer5" unique_id=93529963]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer6" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=930921694]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer6" unique_id=930427521]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("18_mi13x")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer6" unique_id=629301768]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer7" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=444205684]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer7" unique_id=850753145]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("19_eq7ta")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer7" unique_id=2018928139]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer8" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=198847070]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer8" unique_id=91450909]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("20_37tbp")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer8" unique_id=2114758210]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer9" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=567248635]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer9" unique_id=1877486531]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("21_odatr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer9" unique_id=1115767400]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer10" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1652671779]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer10" unique_id=1757416823]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("22_5vugj")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer10" unique_id=289202831]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer11" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1259106622]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer11" unique_id=2035249655]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("23_wvi04")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer11" unique_id=1189577037]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer12" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1296165156]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer12" unique_id=1479394747]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("24_xly64")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer12" unique_id=2068437358]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer13" type="CenterContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges" unique_id=1056485858]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer13" unique_id=569444285]
+custom_minimum_size = Vector2(25, 25)
+layout_mode = 2
+texture = ExtResource("25_xxuwc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBadges/CenterContainer13" unique_id=1845432358]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+text = "60"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardTypesBarChart" type="VBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter" unique_id=126476841]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Panel2" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=714218125]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_m71n4")
+
+[node name="Panel3" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=1320819528]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dt2cr")
+
+[node name="Panel4" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=131359027]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_k4hqi")
+
+[node name="Panel5" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=1475589937]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_l466j")
+
+[node name="Panel6" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=2042170302]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2pjqa")
+
+[node name="Panel7" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=1514232206]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5a0pp")
+
+[node name="Panel" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=475810876]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_lsn1v")
+
+[node name="Panel9" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=224888712]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mi13x")
+
+[node name="Panel10" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=1737853218]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eq7ta")
+
+[node name="Panel8" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=462630849]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_37tbp")
+
+[node name="Panel12" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=753660775]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_odatr")
+
+[node name="Panel13" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=1410598981]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5vugj")
+
+[node name="Panel14" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=1463399567]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wvi04")
+
+[node name="Panel15" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=1210014872]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xly64")
+
+[node name="Panel11" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/HBoxContainer/CardsTypeCounter/CardTypesBarChart" unique_id=562376998]
+custom_minimum_size = Vector2(0, 29)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xxuwc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer" unique_id=2096298047]
+layout_mode = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer" unique_id=1354968220]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+theme_override_constants/autohide = 1
+
+[node name="Header" type="PanelContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer" unique_id=110696070]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xrkgp")
+
+[node name="SearchBox" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Header" unique_id=1275505793 instance=ExtResource("29_2pjqa")]
+layout_mode = 2
+
+[node name="Search" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer" unique_id=2146648582]
+custom_minimum_size = Vector2(90, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8v1")
+script = ExtResource("32_mi13x")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search" unique_id=1895626109]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+follow_focus = true
+draw_focus_border = true
+horizontal_scroll_mode = 0
+
+[node name="HFlowContainer" type="HFlowContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer" unique_id=2056582467]
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 10
+theme_override_constants/v_separation = 10
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="DeckCard" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1073580926 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard2" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1531901298 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard3" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1948731543 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard4" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=940996905 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard5" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=513198599 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard6" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1159173890 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard7" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1414666493 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard8" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1258319640 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard9" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=864011447 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard10" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=728948321 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard11" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=695954781 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard12" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=156522791 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard13" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1156929539 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard14" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=272238640 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard15" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1536635905 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard16" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=105114757 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard17" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1167055487 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard18" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1847137924 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard19" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2117185469 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard20" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1863477157 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard21" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1179210748 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard22" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1630656297 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard23" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1670854286 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard24" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1400088937 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard25" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=255620687 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard26" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1983188069 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard27" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=127823384 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard28" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=54020600 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard29" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1381371387 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard30" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2122130741 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard31" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=838401300 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard32" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1127491718 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard33" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1279370178 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard34" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1638725485 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard35" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2048170073 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard36" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=825520459 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard37" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=676505240 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard38" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=554467563 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard39" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1389559355 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard40" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1548264042 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard41" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1872744772 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard42" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2062863770 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard43" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1399248592 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard44" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2132045341 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard45" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1516083292 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard46" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=882070255 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard47" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2098964865 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard48" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=134634372 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard49" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2115669581 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard50" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=58594455 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard51" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=332188506 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard52" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=454518610 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard53" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=141072855 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard54" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=562338486 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard55" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=524149596 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard56" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1727653106 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard57" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1937687335 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard58" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1331227071 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard59" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1335499474 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard60" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=519231896 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard61" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2102768629 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard62" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=548025567 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard63" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1141442326 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard64" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1681387795 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard65" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1390857666 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard66" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1776218040 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard67" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=519537602 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard68" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1101296664 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard69" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1310492343 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard70" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=73119650 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard71" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=385294845 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard72" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=289636223 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard73" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2060150623 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard74" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=917029776 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard75" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1627159378 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard76" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1549492234 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard77" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=565244279 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard78" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=2094637159 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard79" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=787145558 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard80" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1940172964 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard81" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1303966423 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard82" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=250684134 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard83" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=396905598 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard84" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1705838761 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard85" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1641354427 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard86" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=165053508 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard87" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1439649432 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard88" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1951358514 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard89" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=622264461 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard90" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=994830379 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard91" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=349184955 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard92" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=928865685 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard93" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=71400752 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard94" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1244171 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard95" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=311166703 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="DeckCard96" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/ScrollContainer/HFlowContainer" unique_id=1408779263 instance=ExtResource("3_6eayh")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search" unique_id=511625392]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 16.0
+offset_bottom = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HFlowContainer" type="HFlowContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer" unique_id=1999504027]
+editor_description = "84
+77
+70
+63
+56.....
+7"
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/h_separation = 11
+theme_override_constants/v_separation = 9
+alignment = 1
+last_wrap_alignment = 1
+
+[node name="DeckCard" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=840841630 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard2" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=796046440 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard3" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1099539806 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard4" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1443161987 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard5" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=697917513 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard6" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=644177678 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard7" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1379303730 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard8" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1107289520 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard9" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1388935494 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard10" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=538281108 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard11" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=326698070 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard12" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1191613290 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard13" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=2098788384 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard14" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1124020573 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard15" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=812225077 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard16" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=481387121 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard17" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1581866358 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard18" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=75766228 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard19" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1679615941 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard20" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1833605258 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard21" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1601906182 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard22" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=654546059 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard23" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1803068195 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard24" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=321741400 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard25" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=284467170 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard26" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=846229074 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard27" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1147654303 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard28" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1694087758 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard29" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=681370722 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard30" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1222904340 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard31" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=670379171 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard32" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=222674888 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard33" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1575794746 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard34" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1850610928 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard35" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1871425067 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard36" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=219508449 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard37" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=852253013 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard38" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1300786309 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard39" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=2144766165 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard40" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1660906728 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard41" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=17316831 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard42" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=405978506 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard43" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=528577180 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard44" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1048500435 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard45" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=145257957 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard46" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=986868149 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard47" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=475779814 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard48" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=450350496 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard49" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=189596868 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard50" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1627479011 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard51" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1981892612 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard52" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1112432909 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard53" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=997270570 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard54" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1004125627 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard55" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1678474363 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard56" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=124675420 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard57" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1156291945 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard58" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1321134924 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard59" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=596241849 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard60" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=45071849 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard61" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1756443478 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard62" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=993352123 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard63" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1429278029 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard64" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=534081037 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard65" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1373565774 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard66" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1559131968 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard67" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=2120011870 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard68" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1316961053 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard69" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=129971380 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard70" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=757396647 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard71" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1204135158 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard72" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=183853410 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard73" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1853872167 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard74" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1515767208 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard75" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=155925003 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard76" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=367374887 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard77" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1813078895 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard78" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=845217694 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard79" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=448519605 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard80" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=910757801 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard81" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=910622142 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard82" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1342958595 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard83" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=1252191994 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="DeckCard84" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer" unique_id=885477163 instance=ExtResource("3_6eayh")]
+visible = false
+layout_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer" unique_id=525269490]
+layout_mode = 2
+
+[node name="Status" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer" unique_id=1463392188]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vn8v1")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status" unique_id=357849703]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9.0
+offset_right = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical_scroll_mode = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer" unique_id=39836508]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label2" type="Label" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer/HBoxContainer" unique_id=1121794645]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_a76bk")
+text = "40"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuButton2" type="MenuButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer/HBoxContainer" unique_id=303486996]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Bans"
+item_count = 2
+popup/item_0/text = "d1"
+popup/item_0/id = 0
+popup/item_1/text = "d2"
+popup/item_1/id = 1
+
+[node name="CheckButton" type="CheckButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer/HBoxContainer" unique_id=166706827]
+visible = false
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_vorho")
+text = "test"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Sort" type="HBoxContainer" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer/HBoxContainer" unique_id=976879228]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Button" type="OptionButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer/HBoxContainer/Sort" unique_id=269210374]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+icon_alignment = 1
+expand_icon = true
+selected = 0
+item_count = 1
+popup/item_0/icon = ExtResource("13_l466j")
+popup/item_0/id = 0
+
+[node name="VerticalCheckButtonContainer" type="Panel" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer/HBoxContainer/Sort" unique_id=1504605995]
+custom_minimum_size = Vector2(28, 0)
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/Status/ScrollContainer/HBoxContainer/Sort/VerticalCheckButtonContainer" unique_id=1844315083]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+pivot_offset_ratio = Vector2(0.5, 0.5)
+
+[connection signal="search_finished" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Header/SearchBox" to="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search" method="_on_search_box_search_finished"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard2" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard3" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard4" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard5" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard6" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard7" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard8" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard9" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard10" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard11" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard12" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard13" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard14" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard15" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard16" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard17" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard18" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard19" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard20" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard21" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard22" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard23" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard24" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard25" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard26" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard27" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard28" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard29" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard30" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard31" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard32" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard33" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard34" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard35" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard36" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard37" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard38" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard39" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard40" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard41" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard42" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard43" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard44" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard45" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard46" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard47" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard48" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard49" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard50" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard51" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard52" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard53" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard54" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard55" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard56" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard57" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard58" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard59" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard60" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard61" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard62" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard63" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard64" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard65" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard66" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard67" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard68" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard69" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard70" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard71" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard72" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard73" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard74" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard75" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard76" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard77" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard78" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard79" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard80" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard81" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard82" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard83" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
+[connection signal="card_hovered" from="HSplitContainer/EditorWorkspace/HSplitContainer/VBoxContainer/VSplitContainer/Search/HBoxContainer/HFlowContainer/DeckCard84" to="HSplitContainer/CardPreview" method="_on_deck_card_card_hovered"]
