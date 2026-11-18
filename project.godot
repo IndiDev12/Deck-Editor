@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 CardDatabase="*uid://dpxra3khwy35v"
 CardThumbnailLoader="*uid://61sf0rwis745"
 CardAsyncThumbnailLoader="*uid://s32n0ygmslkk"
+YdkParser="*uid://c8w5ha41m8ysl"
 
 [physics]
 
